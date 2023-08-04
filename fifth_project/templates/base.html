@@ -26,6 +26,10 @@
                 {% url 'submit_form' as fr %}
                 <a class="nav-link" href="{{fr}}">Form</a>
               </li>
+              <li class="nav-item">
+                {% url 'django_form' as dj_fr %}
+                <a class="nav-link" href="{{dj_fr}}">DjangoForm</a>
+              </li>
               
               
             </ul>
