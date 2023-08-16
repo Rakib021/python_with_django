@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div>
+    <h1>TO DO LIST</h1>
+    {%if data%}
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">TITLE</th>
+            <th scope="col">DESCRIPTION</th>
+            <th scope="col">STATUS</th>
+            <th scope="col">ActionS</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for items in data %}
+            <tr>
+                
+                <td>{{items.id}}</td>
+                <td>{{items.book_name}}</td>
+                <td>{{items.author}}</td>
+                <td>{{items.genre}}</td>
+                <td>{{items.first_pub}}</td>
+                <td>{{items.last_pub}}</td>
+                <td><a href="{% url 'edit_task'  items.id %}" class="btn btn-warning btn-sm">Edit</a> <a href="{% url 'delete_book'  items.id %}" class="btn btn-danger btn-sm">Delete</a></td>
+               
+              </tr>
+
+            {%endfor %}
+         
+         
+        </tbody>
+      </table>
+      {%else %}
+      <h2>No data available</h2>
+      {%endif%}
+</div>
+{%endblock%}
