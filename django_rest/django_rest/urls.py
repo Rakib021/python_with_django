@@ -23,6 +23,7 @@ urlpatterns = [
     path("home/",homepage),
     path('api/v1/',include('api.urls')),
     path('api/v1/',include('student.urls')),
-    path('api/v1/',include('courses.urls'))
+    path('api/v1/',include('courses.urls')),
+    
     
 ]
